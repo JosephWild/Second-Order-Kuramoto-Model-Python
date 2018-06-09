@@ -133,7 +133,7 @@ sol = odeint(kuramoto,y0,t, args = (NodeNumber, DGen, DLoad, PowerInput, Generat
 '''Plot Angles if Desired'''
 for i in range(NodeNumber):
     PlotColours = ['g','m','r','b']
-    plt.plot(t,sol[:,i], color=PlotColours[i])
+    plt.plot(t,sol[:,i], color=PlotColours[i%4])
     plt.title('Angles')
     plt.gca().legend(('Generator','Load'))
     plt.ylabel('Relative Change per Time')
